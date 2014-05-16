@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='E:/webops/project/bootstrap/css/bootstrap.css' rel='stylesheet'>
+<style>
+.box
+{
+  width : 50px;
+  height : 50px;
+}
+</style>
+</head>
+<body>
+<img class='box' id='0.0' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='0.1' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='0.2' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='0.3' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='0.4' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'><br>
+<img class='box' id='1.0' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='1.1' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='1.2' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='1.3' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='1.4' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'><br>
+<img class='box' id='2.0' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='2.1' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='2.2' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='2.3' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='2.4' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'><br>
+<img class='box' id='3.0' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='3.1' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='3.2' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='3.3' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='3.4' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'><br>
+<img class='box' id='4.0' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='4.1' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='4.2' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='4.3' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'>
+<img class='box' id='4.4' src='E:/webops/project/minesweeper/minesweeper_files/up.png' onclick='handle_click(this)' oncontextmenu='handle_r_click(this)'><br>
+ </body>
+ <script>
+  var boxes=new Array(5);
+ for(var i=0;i<5;i++)
+  {
+  boxes[i]=new Array(5);  
+  for(var k=0;k<5;k++){boxes[i][k]='foo';}
+  }
+ for(var num=0;num<10;num++)
+  {
+	var i=parseInt(5*Math.random());
+	var j=parseInt(5*Math.random());
+	boxes[i][j]='boom';
+	}
+ function handle_click(a)
+ {var boom=0;
+  var row=parseInt(a.id.split('.')[0]);
+  var col=parseInt(a.id.split('.')[1]);
+  if(boxes[row][col]=='boom')
+  { for(i=0;i<5;i++)
+    {
+    for(j=0;j<5;j++)
+     if(boxes[i][j]=='boom')
+	  {
+	  document.getElementById(i+'.'+j).src='E:/webops/project/minesweeper/minesweeper_files/boom.png';
+      }
+   }
+    a1=document.createElement('img');
+	  a1.setAttribute('src','E:/webops/project/minesweeper/minesweeper_files/sad.png');
+	  document.body.appendChild(a1);
+   }
+   else{
+    for(var m=row-1;m<=row+1;m++)
+	 { console.log('m = ' + m + " from " + (row-1) + "out of " + (row + 1));
+	   for(var n=col-1;n<=col+1;n++)
+	   {  //console.log('col'+'='+col);console.log('n'+'='+n);
+	     if(m>=0&&m<5&&n>=0&&n<5)
+	     {
+		 if(boxes[m][n]=='boom')
+		  boom=boom+1;
+		 }
+		}
+	 }
+	 a.src='E:/webops/project/minesweeper/minesweeper_files/'+boom+'.png'
+   }
+ }
+ function handle_r_click(a)
+ { a.src='E:/webops/project/minesweeper/minesweeper_files/flag.png';
+ event.preventDefault();
+ }
+ </script>
+</html>
